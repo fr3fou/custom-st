@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FuraMono Nerd Font Mono:pixelsize=12:antialias=true:autohint=true:width=1";
-static int borderpx = 12;
+static char *font = "FuraMono Nerd Font Mono:pixelsize=15:antialias=true:autohint=true:width=1";
+static int borderpx = 16;
 
 /*
  * What program is execed by st depends of these precedence rules:

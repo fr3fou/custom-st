@@ -3,6 +3,9 @@
 #include <stdint.h>
 #include <sys/types.h>
 
+/* Arbitrary size */
+#define HISTSIZE      2000
+
 /* macros */
 #define MIN(a, b)		((a) < (b) ? (a) : (b))
 #define MAX(a, b)		((a) < (b) ? (b) : (a))
@@ -11,13 +14,16 @@
 #define DIVCEIL(n, d)		(((n) + ((d) - 1)) / (d))
 #define DEFAULT(a, b)		(a) = (a) ? (a) : (b)
 #define LIMIT(x, a, b)		(x) = (x) < (a) ? (a) : (x) > (b) ? (b) : (x)
-#define ATTRCMP(a, b)		((a).mode != (b).mode || (a).fg != (b).fg || (a).bg != (b).bg)
-#define TIMEDIFF(t1, t2)	((t1.tv_sec-t2.tv_sec)*1000 + (t1.tv_nsec-t2.tv_nsec)/1E6)
+#define ATTRCMP(a, b)		((a).mode != (b).mode || (a).fg != (b).fg || \
+				(a).bg != (b).bg)
+#define TIMEDIFF(t1, t2)	((t1.tv_sec-t2.tv_sec)*1000 + \
+				(t1.tv_nsec-t2.tv_nsec)/1E6)
 #define MODBIT(x, set, bit)	((set) ? ((x) |= (bit)) : ((x) &= ~(bit)))
 
 #define TRUECOLOR(r,g,b)	(1 << 24 | (r) << 16 | (g) << 8 | (b))
 #define IS_TRUECOL(x)		(1 << 24 & (x))
-#define TLINE(y)  ((y) < term.scr ? term.hist[(((y) + term.histi - term.scr + histsize + 1) % histsize)] : term.line[(y) - term.scr])
+#define TLINE(y)       ((y) < term.scr ? term.hist[((y) + term.histi - term.scr \
+               + HISTSIZE + 1) % HISTSIZE] : term.line[(y) - term.scr])
 
 enum glyph_attribute {
 	ATTR_NULL       = 0,
@@ -75,23 +81,13 @@ typedef union {
 	const void *v;
 } Arg;
 
-typedef struct {
-  uint b;
-  uint mask;
-  void (*func)(const Arg *);
-  const Arg arg;
-} MouseKey;
-
 void die(const char *, ...);
 void redraw(void);
 void draw(void);
 
-void iso14755(const Arg *);
-void go_fullscreen(const Arg *);
 void printscreen(const Arg *);
 void printsel(const Arg *);
 void sendbreak(const Arg *);
-void externalpipe(const Arg *);
 void toggleprinter(const Arg *);
 
 int tattrset(int);
@@ -121,9 +117,6 @@ char *xstrdup(char *);
 
 void kscrolldown(const Arg *);
 void kscrollup(const Arg *);
-void histfree(void);
-
-int borderpx;
 
 /* config.h globals */
 extern char *utmp;
@@ -135,8 +128,3 @@ extern char *termname;
 extern unsigned int tabspaces;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
-extern unsigned int alpha;
-extern char *shell;
-extern int borderperc;
-extern unsigned int histsize;
-extern MouseKey mkeys[];

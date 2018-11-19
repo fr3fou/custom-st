@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Operator Mono Bold:pixelsize=25:antialias=true:autohint=true:width=1:spacing=2";
+static char *font = "Monaco:pixelsize=25:antialias=true:autohint=true:width=1:spacing=2";
 static int borderpx = 16;
 
 /*
@@ -64,7 +64,6 @@ static int bellvolume = 0;
 
 /* default TERM value */
 char *termname = "st-256color";
-
 /*
  * spaces per tab
  *
@@ -81,6 +80,9 @@ char *termname = "st-256color";
  *	stty tabs
  */
 unsigned int tabspaces = 8;
+
+/* Alpha */
+unsigned int alpha = 0xef;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -103,7 +105,7 @@ static const char *colorname[] = {
 };
 
 unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
+unsigned int defaultbg = 233;
 static unsigned int defaultcs = 13;
 static unsigned int defaultrcs = 0;
 

@@ -82,8 +82,12 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* bg opacity */
+unsigned int alpha = 0xcc;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
+<<<<<<< ours
   "#2b303b", /* base00 */
   "#bf616a", /* base08 */
   "#a3be8c", /* base0B */
@@ -100,12 +104,46 @@ static const char *colorname[] = {
   "#dfe1e8", /* base06 */
   "#ab7967", /* base0F */
   "#eff1f5", /* base07 */
+=======
+	/* 8 normal colors */
+	"black",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
+
+	/* 8 bright colors */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
+
+	[255] = 0,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#cccccc",
+	"#555555",
+	"black",
+>>>>>>> theirs
 };
 
 unsigned int defaultfg = 7;
+<<<<<<< ours
 unsigned int defaultbg = 0;
 static unsigned int defaultcs = 13;
 static unsigned int defaultrcs = 0;
+=======
+unsigned int defaultbg = 257;
+static unsigned int defaultcs = 256;
+static unsigned int defaultrcs = 257;
+>>>>>>> theirs
 
 /*
  * Default shape of cursor

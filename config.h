@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Monaco:pixelsize=25:antialias=true:autohint=true:width=1:spacing=2";
+static char *font = "xos4 Terminess Powerline:pixelsize=20:antialias=true:autohint=true:width=1:spacing=2";
 static int borderpx = 16;
 
 /*
@@ -105,7 +105,7 @@ static const char *colorname[] = {
 };
 
 unsigned int defaultfg = 7;
-unsigned int defaultbg = 233;
+unsigned int defaultbg = 0;
 static unsigned int defaultcs = 13;
 static unsigned int defaultrcs = 0;
 

@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Input Mono:pixelsize=16:antialias=true:autohint=true:width=1:spacing=2";
+static char *font = "Misc Tamsyn:style=Bold:pixelsize=18";
 static int borderpx = 16;
 
 /*

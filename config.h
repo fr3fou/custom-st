@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Misc Tamsyn:style=Bold:pixelsize=18";
+static char *font = "Monaco:pixelsize=17";
 static int borderpx = 16;
 
 /*

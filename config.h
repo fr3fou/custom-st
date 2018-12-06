@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Monaco:pixelsize=17";
+static char *font = "Monaco:style=Bold:pixelsize=17";
 static int borderpx = 16;
 
 /*

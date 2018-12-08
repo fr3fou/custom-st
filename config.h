@@ -5,11 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-<<<<<<< HEAD
-static char *font = "Monaco:style=Bold:pixelsize=17";
-=======
 static char *font = "UbuntuMono Nerd Font:pixelsize=20";
->>>>>>> 1805c7c2600ba6eecf58735d508654e00075add1
 static int borderpx = 16;
 
 /*

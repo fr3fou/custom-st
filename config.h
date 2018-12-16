@@ -4,8 +4,8 @@
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
- */
-static char *font = "UbuntuMono Nerd Font:pixelsize=20";
+ */ 
+static char *font = "Dank Mono:pixelsize=20";
 static int borderpx = 16;
 
 /*
